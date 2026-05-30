@@ -3,15 +3,11 @@ stages:
 
 e2e-tests:
   stage: test
-
   script:
     - node -v
     - npm -v
-
     - npm install -g yarn
-
+    - yarn -v
     - yarn install
-
     - npx playwright install
-
     - yarn run e2e
