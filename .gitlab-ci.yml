@@ -1,0 +1,13 @@
+image: mcr.microsoft.com/playwright:v1.60.0-noble
+
+stages:
+  - test
+
+e2e-tests:
+  stage: test
+  script:
+    - node -v
+    - npm -v
+    - yarn -v
+    - yarn install
+    - yarn run e2e
