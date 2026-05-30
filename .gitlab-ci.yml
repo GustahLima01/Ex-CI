@@ -1,4 +1,4 @@
-image: node:24
+image: mcr.microsoft.com/playwright:v1.53.0-noble
 
 stages:
   - test
@@ -10,5 +10,4 @@ e2e-tests:
     - npm -v
     - yarn -v
     - yarn install
-    - npx playwright install
     - yarn run e2e
