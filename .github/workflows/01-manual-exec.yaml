@@ -27,6 +27,13 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                 node-version: 24.x
+            
+            # instalação do JAVA
+            - name: Instalando Java para Allure
+              uses: actions/setup-java@v4
+              with:
+                distribution: 'temurin'
+                java-version: '17'
 
             # instalação do yarn
             - name: Instando yarn
