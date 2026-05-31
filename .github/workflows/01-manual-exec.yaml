@@ -43,3 +43,19 @@ jobs:
             # Execução dos testes e2e
             - name: Executando testes e2e
               run: yarn run e2e
+
+            # Gera relatório Allure mesmo se o teste falhar
+            - name: Gerando Allure Report
+              if: always()
+              run: yarn run allure:generate
+
+            # Permite baixar o relatório
+            - name: Publicando artefatos
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: allure-report
+                path: |
+                  allure-report
+                  allure-results
+                  test-results
