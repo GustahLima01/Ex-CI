@@ -16,10 +16,7 @@ jobs:
     # nome do job
     e2e-tests:
         # mquina onde o job vai rooar
-        runs-on:
-            - self-hosted
-            - Windows
-            - X64
+        runs-on: self-hosted
 
         # passos do job
         steps:
