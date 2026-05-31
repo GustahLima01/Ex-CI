@@ -9,6 +9,10 @@ name: 'Execução Manual'
 on:
     workflow_dispatch:
 
+defaults:
+    run:
+        shell: cmd
+    
 # tarefas dentro da pipeline = jobs
 
 jobs:
@@ -16,7 +20,10 @@ jobs:
     # nome do job
     e2e-tests:
         # mquina onde o job vai rooar
-        runs-on: self-hosted
+        runs-on: 
+            - self-hosted
+            - Windows
+            - X64
 
         # passos do job
         steps:
